@@ -53,6 +53,8 @@ class PersonDetect:
         self.input_shape=self.model.inputs[self.input_name].shape
         self.output_name=next(iter(self.model.outputs))
         self.output_shape=self.model.outputs[self.output_name].shape
+        self.width = None
+        self.height = None
 
     def load_model(self):
         '''
@@ -104,8 +106,8 @@ class PersonDetect:
         return processed_image
 
     def set_output_frame_size(self, width, height):
-        self.width = width;
-        self.height = height;
+        self.width = width
+        self.height = height
 
 
 def main(args):
